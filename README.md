@@ -1,2 +1,5 @@
 # Shoex
-The-Great-Pretenders
+## Team Name: The-Great-Pretenders
+
+## Sneaker Freaks
+Fractionalising Ownership of High-End Sneakers
