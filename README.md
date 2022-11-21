@@ -1,8 +1,10 @@
 <p align="center">
-# ShoeX
+  <header>
+    <h1>ShoeX</h1>
+    <p>Posted by John Doe</p>
+    <p>Some additional information here</p>
+  </header>
 </p>
-
-
 
 
 ## Team Name: The-Great-Pretenders
