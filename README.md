@@ -3,6 +3,10 @@
 
 ## Roadmap
 
+
+[![Slides](Images/Slides.gif)](https://www.canva.com/design/DAFSMNt1blo/9X4HeAGjjSaxhrcrIYRdTQ/view?utm_content=DAFSMNt1blo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
+
 ![](https://www.canva.com/design/DAFSAXxD87Y/view?utm_content=DAFSAXxD87Y&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
 ## Team Name: The-Great-Pretenders
 
