@@ -4,7 +4,7 @@
 ## Roadmap
 
 
-[![Slides](../Images/Slides.png)](https://www.canva.com/design/DAFSMNt1blo/9X4HeAGjjSaxhrcrIYRdTQ/view?utm_content=DAFSMNt1blo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+[![Slides](../Images/slides.png)](https://www.canva.com/design/DAFSMNt1blo/9X4HeAGjjSaxhrcrIYRdTQ/view?utm_content=DAFSMNt1blo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 
 
