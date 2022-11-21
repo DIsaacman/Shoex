@@ -2,8 +2,6 @@
 <header>
   <p align="center">
     <h1>ShoeX</h1>
-    <p>Posted by John Doe</p>
-    <p>Some additional information here</p>
    </p>
 </header>
 
