@@ -1,4 +1,10 @@
-# Shoex
+<p align="center">
+# ShoeX
+</p>
+
+
+
+
 ## Team Name: The-Great-Pretenders
 
 ## Sneaker Freaks
