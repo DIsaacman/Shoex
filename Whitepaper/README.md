@@ -1,7 +1,7 @@
 # ShoeX
 ### Democratising High-End Sneaker Ownership
 
-![ShoeX Logo](./Images/shoex%20sneaky%20brand%20logo%20(1).png)
+![ShoeX Logo](../Images/shoex%20sneaky%20brand%20logo%20(1).png)
 
 ## Digital Sneaker-Freakz
 ### Tokenomics and Roadmap for the Sneaky Coin
@@ -24,10 +24,14 @@ The tokens will operate as part of a secure blockchain ledger that tracks and au
 
 SneakX will be the platform that will launch the crowd sale. SneakX has published a roadmap below that indicates that each shoe pair will eventually exist as a unique NFT token that can be purchased with Sneaky coins for storing inventory or personal, physical delivery.
 
+---
+## Roadmap
+
+
+
 [^1]: Sneaker Flipping- https://www.sidehustlenation.com/sneaker-flipping-reselling-shoes/ 
 [^2]: Sneaker Selling Tutorials - https://sneakerflippers.com/ 
 [^3]: State of Sneakers https://huddleup.substack.com/p/the-state-of-sneakers-in-2022
 
----
-##Roadmap
+
 
