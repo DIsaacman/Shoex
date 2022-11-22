@@ -1,4 +1,4 @@
-# ShoeX ICO
+# ShoeX ICO 👟
 #### Team Name: The-Great-Pretenders
 
 
@@ -13,7 +13,11 @@ Shoe flipping is a profitable business. The Sneaky coin will act as a digital to
 
 The tokens will operate as part of a secure blockchain ledger that tracks and audits the sneaker stock. The token will be backed by the sneakers and pegged loosely to the collection's value. This electronic tokenisation will allow the fractional ownership of expensive shoe collections on the open market.
 
+## Features
 
+- **Tokenised Sneaker Ownership** ERC-20 Token on Ethereum Blockchain
+- **Machine Learning Driven Algorithms** Data driven analysis for decision making using ML
+- **Easy to Use Frontend** Interact directly with the blockchain with intuative User Interface
 
 ### Introduction - Sneaky Coin
 
