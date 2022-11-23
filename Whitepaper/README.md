@@ -46,7 +46,7 @@ You can now participate in the high-end sneaker game without spending time, mone
 
 ---
 
-##Tokenomics
+## Tokenomics
 
 ### The ICO (Initial Coin Offer)
 
@@ -65,7 +65,7 @@ Eventually, the token utility will allow the holder to purchase the sneakers dir
 
 ---
 
-Token Distribution
+### Token Distribution
 
 The total supply will vary based on a multiple of the underlying asset. 
 
@@ -75,6 +75,34 @@ Initially, there will be 500,000,000 Sneaky Coins. The total supply will be prim
 
 
 ![](../Images/Allocation.png)
+
+---
+
+## ShoeX Assets - Stocking The Warehouse
+
+### Descision Making
+
+ShoeX will utilise:
+
+- **Expert Opionion** Sneaker Professionals who are well versed in trends and styles.
+- **Machine Learning** Models such as K-Nearest-Neighbors and Logistic-Regression to assist make profitable decisions for the stock.
+- **Data Analysis* Industry best practices to scientifically identify iportant metrics such as popular sizes.
+
+
+![Data Anlysis Example](../Images/Research.png)
+
+
+### Storage 
+ShoeX aims to decentralise the storage of the sneaker collection. 
+
+Multiple locations have been saught out and custom warehouse fitouts designed for the secure inventory of the stock.
+
+
+
+
+
+
+
 
 ---
 
