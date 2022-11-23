@@ -63,7 +63,6 @@ If the token threshold is not met, funds will be promptly returned to the buyers
 Eventually, the token utility will allow the holder to purchase the sneakers directly through the ShoeX service of direct delivery or the custodianship model. The custodian model will give the user rights to the shoe stored and protected by ShoeX.
 
 
----
 
 ### Token Distribution
 
@@ -86,10 +85,15 @@ ShoeX will utilise:
 
 - **Expert Opionion** Sneaker Professionals who are well versed in trends and styles.
 - **Machine Learning** Models such as K-Nearest-Neighbors and Logistic-Regression to assist make profitable decisions for the stock.
-- **Data Analysis* Industry best practices to scientifically identify iportant metrics such as popular sizes.
+- **Data Analysis** Industry best practices to scientifically identify iportant metrics such as popular sizes.
 
 
-![Data Anlysis Example](../Images/Research.png)
+![Data Anlysis Example](../Images/Research_size.png)
+
+![Data Anlysis Example](../Images/Research_retail.png)
+
+![Data Anlysis Example](../Images/Research_name.png)
+
 
 
 ### Storage 
