@@ -20,4 +20,4 @@ df= pd.DataFrame(data=d)
 st.write(df)
 
 #Export dataframe to designated folder
-df.to_csv(r'C:\Users\micha\OneDrive\Desktop\project3\useremail.csv')
+df.to_csv('..\Resources\useremail.csv')
