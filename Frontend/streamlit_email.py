@@ -1,6 +1,10 @@
 import streamlit as st
 import pandas as pd
 import csv
+from pathlib import Path
+
+#create dataframe from existing csv
+user_email_df = pd.read_csv(Path("useremail.csv"))
 
 st.write("# Collecting user email address")
 
@@ -8,16 +12,11 @@ user_name = st.text_input("Please enter your name")
 
 user_email = st.text_input("Please enter your email address")
 
-if st.button("Display the user record"):
-    st.write(f"User name is {user_name}")
-    st.write(f"User email address is {user_email}")
+if st.button("Enter"):
+    dicts = {'user_name': user_name, 'user_email':user_email}
+    user_email_df = user_email_df.append(dicts,ignore_index=True)
 
-#create a dataframe 
-d = {'user_name': [user_name], 'user_email': [user_email]}
-df= pd.DataFrame(data=d)
 
-# Display the dataframe to streamlit
-st.write(df)
-
+user_email_df = user_email_df.drop(user_email_df.columns[[0]], axis=1)
 #Export dataframe to designated folder
-df.to_csv(r'C:\Users\micha\OneDrive\Desktop\project3\useremail.csv')
+user_email_df.to_csv(r'C:\Users\micha\OneDrive\Desktop\project3\useremail.csv')
