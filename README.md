@@ -1,11 +1,9 @@
 # ShoeX ICO 👟
-#### Team Name: The-Great-Pretenders
-
 
 
 [![Slides](Images/slides.png)](https://www.canva.com/design/DAFSMNt1blo/9X4HeAGjjSaxhrcrIYRdTQ/view?utm_content=DAFSMNt1blo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
-
+#### Team Name: The-Great-Pretenders
 
 ## Project Overview - Tokenising High-End Sneakers
 
@@ -65,6 +63,19 @@ Tools used were:
 - [Remix IDE](https://remix.ethereum.org/) was leveraged to create, compile and deploy the ERC-20 token.
 
 - [Open Zeppelin](https://docs.openzeppelin.com/contracts/4.x/wizard) was used for the token contract templates.
+
+<details>
+  <summary>Click to expand:</summary>
+  
+```solc
+$ contract templates /openseppelin/contracts
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/Crowdsale.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/emission/MintedCrowdsale.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/validation/CappedCrowdsale.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/validation/TimedCrowdsale.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/distribution/RefundablePostDeliveryCrowdsale.sol";
+```
+</details>
 
 - [MetaMask](https://metamask.io/) wallet for interacting with test net and signing transactions.
 
