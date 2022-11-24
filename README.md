@@ -65,7 +65,7 @@ Tools used were:
 - [Open Zeppelin](https://docs.openzeppelin.com/contracts/4.x/wizard) was used for the token contract templates.
 
 <details>
-  <summary>Click to expand:</summary>
+  <summary>   Click to expand:</summary>
   
 ```solc
   $ contract templates /openseppelin/contracts/crowdsle
