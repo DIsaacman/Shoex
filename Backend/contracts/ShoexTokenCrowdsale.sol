@@ -7,7 +7,6 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/validation/TimedCrowdsale.sol";
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/distribution/RefundablePostDeliveryCrowdsale.sol";
 
-
 // Have the ShoexTokenCrowdsale contract inherit the following OpenZeppelin:
 // * Crowdsale
 // * MintedCrowdsale
@@ -53,22 +52,7 @@ contract ShoexTokenCrowdsale is Crowdsale, MintedCrowdsale, CappedCrowdsale, Tim
         )
         internal view 
     {   
-        super._preValidatePurchase(_beneficiary,_weiAmount);  
-
-        //Check if stage is preSale only whitelisted beneficiary can buy tokens 
-        // if(Stage == CrowdsaleStage.PreSale) 
-        // {
-        //     //require(isWhitelisted(_beneficiary), "ShoexTokenCrowdsale: beneficiary doesn't have the Whitelisted role"); 
-        // // }        
-        // if(beneficiaries.has(newAddress))
-        // {
-        //     beneficary = beneficiaries[newAddress];
-        // } else 
-        // {
-        //     beneficary = new Beneficiary();
-        //     beneficary.contribution
-        // }
-
+        super._preValidatePurchase(_beneficiary,_weiAmount);          
 
         uint256 existingContribution = contributions[_beneficiary];
         uint256 newContribution = existingContribution.add(_weiAmount);
@@ -78,11 +62,6 @@ contract ShoexTokenCrowdsale is Crowdsale, MintedCrowdsale, CappedCrowdsale, Tim
 
     }
 
-    function addWhitelistedAddress (address newAddress) public
-    {
-        // for(count =0; count<= _whitelisteds.length; count++)
-        // {}
-    }
 }
 
 
@@ -111,9 +90,9 @@ contract ShoexTokenCrowdsaleDeployer {
         shoex_token_address = address(token);
 
         // Create a new instance of the `ShoexTokenCrowdsale` contract
-        //ShoexTokenCrowdsale shoex_crowdsale = new ShoexTokenCrowdsale(rate, wallet, token, investorcap, goal, now, now + 24 weeks);
-        ShoexTokenCrowdsale shoex_crowdsale = new ShoexTokenCrowdsale(rate, wallet, token, investorcap, goal, now, now + 15 minutes);
-            
+        //ShoexTokenCrowdsale shoex_crowdsale = new ShoexTokenCrowdsale(rate, wallet, token, investorcap, goal, now, now + 24 weeks);                           
+
+        ShoexTokenCrowdsale shoex_crowdsale = new ShoexTokenCrowdsale(rate, wallet, token, investorcap, goal, now + 6 minutes, now + 12 minutes);
         // Assign the `ShoexTokenCrowdsale` contract’s address to the `shoex_crowdsale_address` variable.
         shoex_crowdsale_address = address(shoex_crowdsale);
 
