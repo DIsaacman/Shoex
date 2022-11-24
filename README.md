@@ -112,6 +112,35 @@ The Data was sources from StockX which is a collection of 10,000 shoe sales over
 
 Python version 3.7 and Sci-Kit-Learn (```sklearn```) were the main tools to create a KNN and Logistic regression model to determine if a shoe would meet a criteria of profitability.
 
+<details>
+  <summary>Click to expand:</summary>
+  
+```python
+# Modules
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+import matplotlib.ticker as plticker
+
+# Import libararies for metrics
+from sklearn.metrics import balanced_accuracy_score
+from sklearn.metrics import confusion_matrix
+from imblearn.metrics import classification_report_imbalanced
+from sklearn.metrics import classification_report 
+from sklearn import metrics
+
+# Import Models
+from sklearn.model_selection import train_test_split
+from imblearn.over_sampling import RandomOverSampler
+from sklearn.linear_model import LogisticRegression
+from sklearn.neighbors import KNeighborsClassifier
+
+import warnings
+warnings.filterwarnings('ignore')
+```
+</details>
+
 The code below created a profitability column based on if the profit of the shoe was at least 100%. The Bollean value was then converted into a binary integer which was used as a target in the Machine Learning model.
 
 The data was trained tested and split before having several models applied. Oversampling the Data resulted in better accuracy scores to predict if the shoe would be profitable.
