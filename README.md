@@ -31,6 +31,10 @@ The User can now participate in the high-end sneaker game without spending time,
 
 
 
+---
+
+
+
 ## Detailed Usage - Buying Tokens
 
 ShoeX will conduct a Pre-Sale to raise funds directly on the Ethereum blockchain as a Crowdsale smart contract in Solidity. In addition, ShoeX will sell digital ERC-20 tokens called Sneaky Coins to raise capital to invest in the sneaker collateral.
@@ -39,7 +43,12 @@ The benefit of the ERC-20 standard will be that tokens are immutable,  transpare
 
 ## User Instructions
 
+
+
 ### Front End - Buying Tokens 
+
+
+
 
 ### Back End - Tokenisation
 
@@ -64,9 +73,49 @@ Tools used were:
 
 ![](Images/ShoeX%20Roadmap.png)
 
+
+
+
 ## Examples
+
+
 
 ## Analysis
 
+### Data Analysis & Machine Learning
 
+In order to ensure that the sneaker investments are profitable, we used ML and Data analysis to create models and guidlines for buying Sneakers. 
+
+It is apparent that the best shoe sizes for a profitable return are between 9-11 as shown below.
+
+![](Images/Research_size.png)
+
+The Data was sources from StockX which is a collection of 10,000 shoe sales over a 3 year period.
+
+Python version 3.7 and Sci-Kit-Learn (```sklearn```) were the main tools to create a KNN and Logistic regression model to determine if a shoe would meet a criteria of profitability.
+
+The code below created a profitability column based on if the profit of the shoe was at least 100%. The Bollean value was then converted into a binary integer which was used as a target in the Machine Learning model.
+
+The data was trained tested and split before having several models applied. Oversampling the Data resulted in better accuracy scores to predict if the shoe would be profitable.
+
+In the future, the model will be fitted with higher quality data as part of the ongoing improvement of the project.
+
+
+
+```
+#Set Profit Margin as a multiple
+margin = 1
+
+# Find Profitable Sales and Create New Column Called Profitable to act as a target
+df['Profitable'] = (df['%']>= margin )
+
+# Change bool value to integer
+df['Profitable'] = df['Profitable'].astype(int)
+```
+
+---
+
+
+
+![](Images/Shoex%20Token%20Shoes%20Sale%20%20(Poster).png)
 
