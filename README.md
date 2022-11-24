@@ -43,6 +43,23 @@ The benefit of the ERC-20 standard will be that tokens are immutable,  transpare
 
 ### Back End - Tokenisation
 
+The ERC-20 was written in solidity, a smart-contract language on ethereum.
+
+```
+pragma solidity ^0.5.17;
+```
+
+Tools used were:
+
+- [Ganache](https://trufflesuite.com/ganache/)  to access the ETH test-net
+
+- [Remix IDE](https://remix.ethereum.org/) was leveraged to create, compile and deploy the ERC-20 token.
+
+- [Open Zeppelin](https://docs.openzeppelin.com/contracts/4.x/wizard) was used for the token contract templates.
+
+- [MetaMask](https://metamask.io/) wallet for interacting with test net and signing transactions.
+
+
 ## Roadmap
 
 ![](Images/ShoeX%20Roadmap.png)
