@@ -41,7 +41,7 @@ contract ShoexTokenPreCrowdsale is Crowdsale, MintedCrowdsale, TimedCrowdsale,Fi
 
     /**
      * @dev public function to add whitelised beneficary
-     * @param beneficiary Token purchaser     
+     * @param beneficary Token purchaser     
      */
     function addWhitelistedAddress (address beneficary) public
     {
@@ -77,7 +77,7 @@ contract ShoexTokenPreCrowdsaleDeployer {
 
         // Create a new instance of the `ShoexTokenPreCrowdsale` contract       
 
-        ShoexTokenPreCrowdsale shoex_pre_crowdsale = new ShoexTokenPreCrowdsale(rate, wallet, token, now , now + 5 minutes);
+        ShoexTokenPreCrowdsale shoex_pre_crowdsale = new ShoexTokenPreCrowdsale(rate, wallet, token, block.timestamp , block.timestamp + 14 minutes);
         // Assign the `ShoexTokenPreCrowdsale` contract’s address to the `shoex_crowdsale_address` variable.
         shoex_pre_crowdsale_address = address(shoex_pre_crowdsale);
 

@@ -47,8 +47,7 @@ def load_contract():
         address=crowdsale_contract_address,
         abi=artwork_crowdsale_abi
     )
-
-    
+   
 
     return presale_contract, crowdsale_contract
 
@@ -56,7 +55,7 @@ def load_contract():
 # Load the contract
 presale_contract, crowdsale_contract = load_contract()
 
-
+stage = "Starting soon"
 ################################################################################
 # Register Shoex Crowdsale
 ################################################################################
@@ -74,13 +73,14 @@ def get_crowdsaledetails():
         stage = "Presale"
         token_price = presale_contract.functions.rate().call()
         presale_weiraised = presale_contract.functions.weiRaised().call()
-        weiraised = presale_weiraised
+        weiraised = w3.fromWei(presale_weiraised,'ether')        
         # status = "Open"
     elif(ico_isOpen):    
         stage = "Public ICO"
         token_price = crowdsale_contract.functions.rate().call()
         ico_weiraised = crowdsale_contract.functions.weiRaised().call()
-        weiRaised = ico_weiraised
+        weiraised = w3.fromWei(ico_weiraised,'ether')
+        # weiraised = ico_weiraised
         # status = crowdsale_contract.functions.isOpen().call()
         finalised = "No"    
         if crowdsale_contract.functions.finalized().call():
@@ -88,13 +88,15 @@ def get_crowdsaledetails():
     else:
         stage = "Closed"
         token_price = crowdsale_contract.functions.rate().call()
-        # weiraised = presale_weiraised + ico_weiraised
+        presale_weiraised = presale_contract.functions.weiRaised().call()
+        ico_weiraised = crowdsale_contract.functions.weiRaised().call()
+        weiraised = w3.fromWei(presale_weiraised + ico_weiraised,'ether')
         # status = "Close"
 
     # Display Data
     st.sidebar.write("#### Active Stage ",stage)    
     st.sidebar.write("#### Rate ",token_price)
-    st.sidebar.write("#### Wei Raised ",weiraised)    
+    st.sidebar.write("#### ETH Raised ",weiraised)    
     if(stage == "Public ICO"):
         st.sidebar.write("#### Goal ",crowdsale_contract.functions.goal().call())
   
@@ -102,10 +104,12 @@ def get_crowdsaledetails():
     st.sidebar.write("#### Opening Time ",crowdsale_contract.functions.openingTime().call())
     st.sidebar.write("#### Closing Time ",crowdsale_contract.functions.closingTime().call())
     # crowdsale_contract.functions.buyTokens()
+
+    return stage
    
 st.title("Shoex Crowdsale")
 
-get_crowdsaledetails()
+stage = get_crowdsaledetails()
 
 # token_price = crowdsale_contract.functions.rate().call()
 
@@ -114,10 +118,11 @@ get_crowdsaledetails()
 #----------------------------------------------------------------------------------------------------------------------
 accounts = w3.eth.accounts
 address = st.selectbox("Ganache Accounts", options=accounts)
-investor_account = generate_account()
+investor_account = address
 number_of_tokens = st.number_input("Number of Tokens Purchasing", step = 1)
 
 token_price = crowdsale_contract.functions.rate().call()
+st.write("Stage ",stage)
 # Click button to buy tokens
 if st.button("Buy Token"):
     
@@ -125,17 +130,25 @@ if st.button("Buy Token"):
     st.markdown("## Total Token Cost in Ether")
     st.markdown(token_price)
     st.markdown(number_of_tokens)
-    st.markdown(investor_account.address)    
+    st.markdown(address)    
     total_cost = token_price * number_of_tokens    
     st.write(total_cost)
     
     value = w3.toWei(total_cost, "ether")
+    
+    transaction_hash = ""    
 
     # transaction_hash = buy_token(w3, investor_account, total_cost)
-    transaction_hash = crowdsale_contract.functions.buyTokens(investor_account.address).transact(
-        {"from": investor_account.address, "value": value, "gas": 2000000})
-    
-    receipt = w3.eth.waitForTransactionReceipt(transaction_hash)
+    st.write(stage)
+    if(stage == "Public ICO"):
+        st.write("Public ICO")
+        transaction_hash = crowdsale_contract.functions.buyTokens(address).transact(
+            {"from": address, "value": value, "gas": 2000000})
+        receipt = w3.eth.waitForTransactionReceipt(transaction_hash)    
+    elif(stage == "Presale"):
+        transaction_hash = presale_contract.functions.buyTokens(address).transact(
+            {"from": address, "value": value, "gas": 2000000})
+        receipt = w3.eth.waitForTransactionReceipt(transaction_hash)
 
     st.markdown("#### Validated Transaction Hash")
 

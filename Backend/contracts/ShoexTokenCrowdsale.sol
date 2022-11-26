@@ -57,9 +57,8 @@ contract ShoexTokenCrowdsale is Crowdsale, MintedCrowdsale, CappedCrowdsale, Tim
         uint256 existingContribution = contributions[_beneficiary];
         uint256 newContribution = existingContribution.add(_weiAmount);
         require( newContribution <= investorHardCap,"CappedCrowdsale: total invester contribution not with invester cap");
-        contributions[_beneficiary].add(_weiAmount);             
+        contributions[_beneficiary].add(_weiAmount);            
         
-
     }
 
 }
@@ -92,7 +91,7 @@ contract ShoexTokenCrowdsaleDeployer {
         // Create a new instance of the `ShoexTokenCrowdsale` contract
         //ShoexTokenCrowdsale shoex_crowdsale = new ShoexTokenCrowdsale(rate, wallet, token, investorcap, goal, now, now + 24 weeks);                           
 
-        ShoexTokenCrowdsale shoex_crowdsale = new ShoexTokenCrowdsale(rate, wallet, token, investorcap, goal, now + 6 minutes, now + 12 minutes);
+        ShoexTokenCrowdsale shoex_crowdsale = new ShoexTokenCrowdsale(rate, wallet, token, investorcap, goal, block.timestamp + 15 minutes, block.timestamp + 36 weeks);
         // Assign the `ShoexTokenCrowdsale` contract’s address to the `shoex_crowdsale_address` variable.
         shoex_crowdsale_address = address(shoex_crowdsale);
 
