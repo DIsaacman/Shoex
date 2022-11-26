@@ -138,10 +138,8 @@ if st.button("Buy Token"):
     
     transaction_hash = ""    
 
-    # transaction_hash = buy_token(w3, investor_account, total_cost)
-    st.write(stage)
-    if(stage == "Public ICO"):
-        st.write("Public ICO")
+    # transaction_hash = buy_token(w3, investor_account, total_cost)    
+    if(stage == "Public ICO"):        
         transaction_hash = crowdsale_contract.functions.buyTokens(address).transact(
             {"from": address, "value": value, "gas": 2000000})
         receipt = w3.eth.waitForTransactionReceipt(transaction_hash)    
