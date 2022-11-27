@@ -35,13 +35,37 @@ The User can now participate in the high-end sneaker game without spending time,
 
 ## Detailed Usage - Buying Tokens
 
-ShoeX will conduct a Pre-Sale to raise funds directly on the Ethereum blockchain as a Crowdsale smart contract in Solidity. In addition, ShoeX will sell digital ERC-20 tokens called Sneaky Coins to raise capital to invest in the sneaker collateral.
+ShoeX will conduct a Pre-Sale to raise funds directly on the Ethereum blockchain as a Crowdsale smart contract in Solidity. In addition, ShoeX will sell digital ERC-20 tokens called Sneaky Coins to raise capital to invest in the sneaker collateral. Pre-sale is open only to the selected investors who believes in ShoeX.
 
-The benefit of the ERC-20 standard will be that tokens are immutable,  transparent, and tradable in a peer-to-peer fashion. The tokens can be self custodied and stored in a hardware wallet for safe keeping
+The public ICO offers investors with an option of withdrawing their funds incase goal is not met. ICO would be capped at investor level as well e.g. no investor can buy more than 100 tokens.
+
+The benefit of the ERC-20 standard will be that tokens are immutable,  transparent, and tradable in a peer-to-peer fashion. The tokens can be self custodied and stored in a hardware wallet for safe keeping.
 
 ## User Instructions
+### Back End deployment
+
+To run the solidity code in Remix, please complie the solution files and follow the steps as in below gif for deployment of crowsale contracts.
+
+![](Images/Crowdsalecontractdeployment.gif)
 
 
+### Back End - Crowsale workflow Demo
+#### Stage 1 - Presale
+
+Presale is open only for whitelisted investors, where tokens are offered at better rate. Gif belows describe buying tokens during presale
+
+![](Images/Presale.gif)
+
+#### Stage 2 - Public ICO
+
+Gif below describe buying tokens during public ICO
+
+![](Images/PublicICOBuyRemix.gif)
+
+    
+Gif below describe finalising post delivery refundable crowdsale when goal is not met. In this scenario investors can withdraw their money.
+
+![](Images/PublicICOFinaliseWithReturnRemix.gif)
 
 ### Front End - Buying Tokens 
 
