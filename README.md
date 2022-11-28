@@ -3,15 +3,21 @@
 
 [![Slides](Images/slides.png)](https://www.canva.com/design/DAFSkN3Skvk/r_mWnVFkyoZ9kC4BecCgPA/view?utm_content=DAFSkN3Skvk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
+
+
 #### Team Name: The-Great-Pretenders
 
 ![](Images/Shoex%20Token%20Shoes%20Sale%20%20(Poster).png)
+
+
 
 ## Project Overview - Tokenising High-End Sneakers
 
 Shoe flipping is a profitable business. The Sneaky coin will act as a digital token that allows individuals and organisations to exchange value backed by rare physical sneaker collections. 
 
-The tokens will operate as part of a secure blockchain ledger that tracks and audits the sneaker stock. The token will be backed by the sneakers and pegged loosely to the collection's value. This electronic tokenisation will allow the fractional ownership of expensive shoe collections on the open market.
+The tokens will operate as part of a secure blockchain ledger that provides utility tethered closely to the sneaker stock. The token will be backed by the sneakers and pegged loosely to the collection's value. This electronic tokenisation will allow the fractional ownership of expensive shoe collections available on the open market using modern Financial Technology.
+
+
 
 ## Features
 
@@ -19,13 +25,16 @@ The tokens will operate as part of a secure blockchain ledger that tracks and au
 - **Machine Learning Driven Algorithms** Data-driven analysis for decision-making using ML
 - **Easy to Use Frontend** Interact directly with the blockchain with an intuitive User Interface
 
+
+
 ### Introduction - Sneaky Coin
+
 
 Blockchains and Distributed Ledger Technology have proven to be successful at tokenising real-world assets. 
 
 We can now take previously indivisible assets and fractionalise the network's stake.
 
-Assets such as Real Estate and Gold have been successfully tokenised using blockchain technology. The digitisation of assets using smart contracts significantly benefits the users. Moreover, the tokens are divisible into more affordable units with additional utility.
+The digitisation of assets such as Real- Estate and Gold, using smart contracts and blockchains, significantly benefits the users. Moreover, the tokens are divisible into more affordable units with additional utility.
 
 The User can now participate in the high-end sneaker game without spending time, money and effort to find, buy and then secure the physical sneakers.
 
@@ -35,16 +44,30 @@ The User can now participate in the high-end sneaker game without spending time,
 
 
 
-## Detailed Usage - Buying Tokens
+## Detailed Usage - Buying the ERC-20 Tokens
 
-ShoeX will conduct a Presale to raise funds directly on the Ethereum blockchain as a Crowdsale smart contract in Solidity. In addition, ShoeX will sell digital ERC-20 tokens called Sneaky Coins to raise capital to invest in the sneaker collateral. Presale is open only to the selected investors who believe in ShoeX.
+Initially the token will be hosted on the Ethereum Network as a Solidity Smart Contract. Users will need sufficient ETH for the transaction (Including Gas Fees) using their preffered wallet. Sufficient testing has been conducted on a local ETH testnet as detailed below.
 
-The public ICO offers investors the option of withdrawing their funds if the goal is not met. Furthermore, the ICO will be capped at the investor level, e.g. no investor can buy more than 100 tokens.
+
+### Presale
+
+ShoeX will conduct a Presale to raise funds directly on the Ethereum blockchain. ShoeX will sell digital ERC-20 tokens called Sneaky Coins to raise capital for initial inventory and warehousing. Presale is open only to the whitelisted investors who sign up through our KYC portal.
+
+
+### Crowdsale 
+
+The second round of funding will come from a Crowdsale (ICO). The public ICO wil also offer investors the option of withdrawing their funds if the funding goal is not met. Furthermore, the ICO will be capped at the investor level, e.g. no investor can buy more than 100 tokens to ensure a fair distribution.
 
 The benefit of the ERC-20 standard will be that tokens are immutable,  transparent, and tradable in a peer-to-peer fashion. In addition, the tokens can be self custodied and stored in a hardware wallet for safekeeping.
 
-## User Instructions
-### Back End deployment
+
+---
+
+
+# User Instructions
+
+
+## Back End deployment
 
 To run the solidity code in Remix, please complie the solution files and follow the steps below gif for the deployment of the crowdsale contracts.
 
@@ -52,19 +75,19 @@ To run the solidity code in Remix, please complie the solution files and follow 
 
 
 
----
+## Back End - Crowsale workflow Demo
 
 
-
-### Back End - Crowsale workflow Demo
-#### Stage 1 - Presale
+### Stage 1 - Presale
 
 
 Presale is open only for whitelisted investors, where tokens are offered at a better rate. The gif below describes buying tokens during the presale.
 
 ![](Images/Presale.gif)
 
-#### Stage 2 - Public ICO
+
+
+### Stage 2 - Public ICO
 
 The gif below describes buying tokens during a public ICO.
 
@@ -76,24 +99,25 @@ The gif below shows finalising post-delivery refundable crowdsale when the goal 
 ![](Images/PublicICOFinaliseWithReturnRemix.gif)
 
 
-### Front End - Buying Tokens 
+
+## Front End - Buying Tokens 
 
 Interacting with The Front End on Streamlit
 
-###Crowdsale
+### Crowdsale
 ![Crowdsale](https://github.com/DIsaacman/Shoex/blob/main/Images/streamlit1.png)
 
 ### Email Capture
-![Email_Capture](https://github.com/DIsaacman/Shoex/blob/main/Images/streamlit2.png)
+![Email_Capture](https://github.com/DIsaacman/Shoex/blob/main/Images/streamlit2.jpg)
 
 ### Whitepaper
-![Whitepaper](https://github.com/DIsaacman/Shoex/blob/main/Images/streamlit3.png)
+![Whitepaper](https://github.com/DIsaacman/Shoex/blob/main/Images/streamlit3.jpg)
 
 
 ---
 
 
-### Back End - Tokenisation
+## Back End - Tokenisation
 
 The ERC-20 code was written in Solidity, a smart-contract language on Ethereum.
 
@@ -131,6 +155,7 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5
 </details>
 
 - [MetaMask](https://metamask.io/) wallet for interacting with test net and signing transactions.
+
 
 
 ## Interacting with the Backend
@@ -228,6 +253,8 @@ df['Profitable'] = df['Profitable'].astype(int)
 
 ---
 
+
 ## Roadmap
+
 
 ![](Images/ShoeX%20Roadmap.png)
