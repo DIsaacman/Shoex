@@ -51,8 +51,14 @@ To run the solidity code in Remix, please complie the solution files and follow 
 ![](Images/Crowdsalecontractdeployment.gif)
 
 
+
+---
+
+
+
 ### Back End - Crowsale workflow Demo
 #### Stage 1 - Presale
+
 
 Presale is open only for whitelisted investors, where tokens are offered at a better rate. The gif below describes buying tokens during the presale.
 
@@ -69,11 +75,22 @@ The gif below shows finalising post-delivery refundable crowdsale when the goal 
 
 ![](Images/PublicICOFinaliseWithReturnRemix.gif)
 
+
 ### Front End - Buying Tokens 
 
-- *Insert Text and Images here
+Interacting with The Front End on Streamlit
+
+###Crowdsale
+![Crowdsale](https://github.com/DIsaacman/Shoex/blob/main/Images/streamlit1.png)
+
+### Email Capture
+![Email_Capture](https://github.com/DIsaacman/Shoex/blob/main/Images/streamlit2.png)
+
+### Whitepaper
+![Whitepaper](https://github.com/DIsaacman/Shoex/blob/main/Images/streamlit3.png)
 
 
+---
 
 
 ### Back End - Tokenisation
@@ -141,20 +158,15 @@ SALE_TOKEN_CONTRACT_ADDRESS= "(insert)"
 - Launch AdminAp.py streamlit run ```adminApp.py```
 
 
-## Roadmap
 
-![](Images/ShoeX%20Roadmap.png)
-
-
-
-
-## Examples
-
+---
 
 
 ## Analysis
 
 ### Data Analysis & Machine Learning
+
+
 
 To ensure that the sneaker investments are profitable, we used ML and Data analysis to create models and guidelines for buying Sneakers. 
 
@@ -216,3 +228,6 @@ df['Profitable'] = df['Profitable'].astype(int)
 
 ---
 
+## Roadmap
+
+![](Images/ShoeX%20Roadmap.png)
