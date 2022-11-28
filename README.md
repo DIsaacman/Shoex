@@ -72,6 +72,8 @@ Gif below describe finalising post delivery refundable crowdsale when goal is no
 - *Insert Text and Images here
 
 
+
+
 ### Back End - Tokenisation
 
 The ERC-20 was written in solidity, a smart-contract language on ethereum.
@@ -110,8 +112,8 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5
 
 - [MetaMask](https://metamask.io/) wallet for interacting with test net and signing transactions.
 
-## User Instruction
-### Interacting with the Backend
+
+## Interacting with the Backend
 
 In order to run the code on your local machine, please follow the below steps:
 
@@ -127,7 +129,7 @@ In order to run the code on your local machine, please follow the below steps:
 - Insert the addresses into an .env file using the sytnax
 
 ```env
-- MNEMONIC = "(insert 12 word keyphrase)"
+MNEMONIC = "(insert 12 word keyphrase)"
 WEB3_PROVIDER_URI= "http://127.0.0.1:7545"
 PRE_SALE_SMART_CONTRACT_ADDRESS= "(insert)"
 PRE_TOKEN_CONTRACT_ADDRESS= "(insert)"
@@ -135,6 +137,7 @@ SALE_SMART_CONTRACT_ADDRESS= "(insert)"
 SALE_TOKEN_CONTRACT_ADDRESS= "(insert)"
 ```
 - Launch AdminAp.py streamlit run ```adminApp.py```
+- 
 
 
 ## Roadmap
