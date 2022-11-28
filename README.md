@@ -124,8 +124,7 @@ In order to run the code on your local machine, please follow the below steps:
 - Copy The ABI and save/overwrite to backend/contracts/compiled using the same names
 - Deploy the ShoeX Token Presale and Crowdsale (ShoexTokenPreCrowdsaleDeployer)
 - Parse in the input parameters including token name and token rate with Remix Deployer
-- Copy the address owner of presale
-- Copy the contract addresses
+- Copy the contract addresses of Presale and Crowdsale
 - Insert the addresses into an .env file using the sytnax
 
 ```env
@@ -137,7 +136,6 @@ SALE_SMART_CONTRACT_ADDRESS= "(insert)"
 SALE_TOKEN_CONTRACT_ADDRESS= "(insert)"
 ```
 - Launch AdminAp.py streamlit run ```adminApp.py```
-- 
 
 
 ## Roadmap
