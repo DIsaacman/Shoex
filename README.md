@@ -69,7 +69,7 @@ Gif below describe finalising post delivery refundable crowdsale when goal is no
 
 ### Front End - Buying Tokens 
 
-
+- *Insert Text and Images here
 
 
 ### Back End - Tokenisation
@@ -109,6 +109,32 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5
 </details>
 
 - [MetaMask](https://metamask.io/) wallet for interacting with test net and signing transactions.
+
+## User Instruction
+### Interacting with the Backend
+
+In order to run the code on your local machine, please follow the below steps:
+
+- Download the GitHub repo using ```git clone git@github.com:DIsaacman/Shoex.git```
+- Open Remix IDE and upload the three ```.sol``` files in contracts folder
+- Open Ganache and ensure metamask is installed and active
+- Compile the Contracts in Remix-IDE
+- Copy The ABI and save/overwrite to backend/contracts/compiled using the same names
+- Deploy the ShoeX Token Presale and Crowdsale (ShoexTokenPreCrowdsaleDeployer)
+- Parse in the input parameters including token name and token rate with Remix Deployer
+- Copy the address owner of presale
+- Copy the contract addresses
+- Insert the addresses into an .env file using the sytnax
+
+```env
+- MNEMONIC = "(insert 12 word keyphrase)"
+WEB3_PROVIDER_URI= "http://127.0.0.1:7545"
+PRE_SALE_SMART_CONTRACT_ADDRESS= "(insert)"
+PRE_TOKEN_CONTRACT_ADDRESS= "(insert)"
+SALE_SMART_CONTRACT_ADDRESS= "(insert)"
+SALE_TOKEN_CONTRACT_ADDRESS= "(insert)"
+```
+- Launch AdminAp.py streamlit run ```adminApp.py```
 
 
 ## Roadmap
