@@ -2,7 +2,7 @@
 ## The Sneaky Token
 ### Democratising High-End Sneaker Ownership
 
-![ShoeX Logo](../Images/shoex%20sneaky%20brand%20logo%20(1).png)
+![ShoeX Logo](https://github.com/DIsaacman/Shoex/blob/main/Images/shoex%20sneaky%20brand%20logo%20(1).png)
 
 ## Digital Sneaker-Freakz
 ### Tokenomics and Roadmap for the Sneaky Coin
