@@ -93,6 +93,7 @@ The gif below describes buying tokens during a public ICO.
 
 ![](Images/PublicICOBuyRemix.gif)
 
+### Stage 2.1 - ICO Raise Not Funded
     
 The gif below shows finalising post-delivery refundable crowdsale when the goal is not met. In this scenario, investors can withdraw their money.
 
@@ -105,12 +106,28 @@ The gif below shows finalising post-delivery refundable crowdsale when the goal 
 Interacting with The Front End on Streamlit
 
 ### Crowdsale
+
+Whitelisted addresses can select their account and select an amount to purchase.
+
+Additional information is available on the sidebar including the "Rate" of ETH/SHX Token and the "Total ETH Raised"
 ![Crowdsale](https://github.com/DIsaacman/Shoex/blob/main/Images/streamlit1.png)
 
+
 ### Email Capture
+
+Allows a user to stay up to date with the latest information. 
+
+The captured information will be stored in the Resources folder in a CSV
+
 ![Email_Capture](https://github.com/DIsaacman/Shoex/blob/main/Images/streamlit2.jpg)
 
+
 ### Whitepaper
+
+Link for more information regarding the token economics (tokenomics) and allocation of funds.
+
+User redirected to the active github repo for the whitepaper.
+
 ![Whitepaper](https://github.com/DIsaacman/Shoex/blob/main/Images/streamlit3.jpg)
 
 
@@ -162,15 +179,15 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5
 
 To run the code on your local machine, please follow the below steps:
 
-- Download the GitHub repo using ```git clone git@github.com:DIsaacman/Shoex.git```
-- Open Remix IDE and upload the three ```.sol``` files in the contracts folder
-- Open Ganache and ensure MetaMask is installed and active
-- Compile the Contracts in Remix-IDE
-- Copy The ABI and save/overwrite to backend/contracts/compiled using the same names
-- Deploy the ShoeX Token Presale and Crowdsale (ShoexTokenPreCrowdsaleDeployer)
-- Parse in the input parameters, including token name and token rate, with Remix Deployer
-- Copy the contract addresses of Presale and Crowdsale
-- Insert the addresses into a .env file using the syntax
+1 Download the GitHub repo using ```git clone git@github.com:DIsaacman/Shoex.git```
+2 Open Remix IDE and upload the three ```.sol``` files in the contracts folder
+3 Open Ganache and ensure MetaMask is installed and active
+4 Compile the Contracts in Remix-IDE
+5 Copy The ABI and save/overwrite to backend/contracts/compiled using the same names
+6 Deploy the ShoeX Token Presale and Crowdsale (ShoexTokenPreCrowdsaleDeployer)
+7 Parse in the input parameters, including token name and token rate, with Remix Deployer
+8 Copy the contract addresses of Presale and Crowdsale
+9 Insert the addresses into a .env file using the syntax
 
 ```env
 MNEMONIC = "(insert 12 word keyphrase)"
@@ -180,7 +197,7 @@ PRE_TOKEN_CONTRACT_ADDRESS= "(insert)"
 SALE_SMART_CONTRACT_ADDRESS= "(insert)"
 SALE_TOKEN_CONTRACT_ADDRESS= "(insert)"
 ```
-- Launch AdminAp.py streamlit run ```adminApp.py```
+10 Launch AdminAp.py streamlit run ```adminApp.py```
 
 
 
