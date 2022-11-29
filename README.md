@@ -119,7 +119,7 @@ Allows a user to stay up to date with the latest information.
 
 The captured information will be stored in the Resources folder in a CSV
 
-![Email_Capture](https://github.com/DIsaacman/Shoex/blob/main/Images/streamlit2.jpg)
+![Email_Capture](https://github.com/DIsaacman/Shoex/blob/main/Images/streamlit2.png)
 
 
 ### Whitepaper
