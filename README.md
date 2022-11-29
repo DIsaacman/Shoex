@@ -180,13 +180,27 @@ Tools used were:
 To run the code on your local machine, please follow the below steps:
 
 1 Download the GitHub repo using ```git clone git@github.com:DIsaacman/Shoex.git```
-2 Open Remix IDE and upload the three ```.sol``` files in the contracts folder ![](Images/step_2.png)
+
+2 Open Remix IDE and upload the three ```.sol``` files in the contracts folder 
+
+![](Images/step_2.png)
+
 3 Open Ganache and ensure MetaMask is installed and active
-4 Compile the Contracts in Remix-IDE ![](Images/step_4.png)
-5 Copy The ABI and save/overwrite to backend/contracts/compiled using the same names ![](Images/step_5.png)
+
+4 Compile the Contracts in Remix-IDE 
+
+![](Images/step_4.png)
+
+5 Copy The ABI and save/overwrite to backend/contracts/compiled using the same names 
+
+![](Images/step_5.png)
+
 6 Deploy the ShoeX Token Presale and Crowdsale (ShoexTokenPreCrowdsaleDeployer)
+
 7 Parse in the input parameters, including token name and token rate, with Remix Deployer
+
 8 Copy the contract addresses of Presale and Crowdsale
+
 9 Insert the addresses into a .env file using the syntax
 
 ```env
@@ -198,6 +212,7 @@ SALE_SMART_CONTRACT_ADDRESS= "(insert)"
 SALE_TOKEN_CONTRACT_ADDRESS= "(insert)"
 ```
 10 Launch AdminApp.py 
+
 ```bash
 streamlit run adminApp.py```
 
