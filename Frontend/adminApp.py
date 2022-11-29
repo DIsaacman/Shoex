@@ -1,31 +1,33 @@
 ################################################################################
 # The purpose of this file is to create a streamlit app to run the crowdsale.
 # The code in this file is divided into following sections
-
 # Section 1 - Necessary imports
-
 # Section 2 -
 #   * loads environment variables
 #   * initialises session state, menu tabs and variables used in the file
 #   * define and connect to Web3 provider  
-
 # Section 3 -
 #   * loads the contract once using cache
 #   * connects to the contract using the contract address and ABI
-
 # Section 4 -
 #   * Call contract functions to get the current active stage and 
 #     real time crowdsale data
 #   * Write data to the sidebar
-
-# Section 5 - 
-#   * 
-#   * 
-#   * 
-#   * 
-#   * 
-#   * 
-#   * 
+# Section 5 - Contains functional code for 3 tabs
+#   * tab1 - Crowdsale code 
+#       1. Provides UI and interacts with the contracts 
+#       2. Display realtime crowdsale status and data in the sidebar
+#       3. Provides functionality to buy token in both stages of crowdsale        
+#       4. Smooth transition in the UI when stage moves from pre-sale to crowdsale
+#       5. Implements Presale validations -
+#               1) presale is only open to the whitelisted beneficiaries
+#               2) for a limited time 
+#               3) at discounted rate
+#       6. Implement functionality to add whitelisted addresses
+#   * tab2 - Register
+#       1. Provides UI for user to enter name and email address.
+#       2. Saves user data in an excelsheet.
+#   * tab2 - Whitepaper - Provides link to Shoex Whitepaper.
 
 ################################################################################
 
@@ -107,6 +109,8 @@ presale_contract, crowdsale_contract = load_contract()
 # 1. Call contract functions to get the current active stage and 
 #    real time crowdsale data 
 # 2. Write data to the sidebar
+# This function is invoked everytime there is a state change, 
+# which helps in easy transition from Pre-Sale -> Public ICO -> Crowdsale closing
 ################################################################################
 def get_crowdsaledetails():
     st.sidebar.markdown("## Shoex crowdsale details")
@@ -119,7 +123,7 @@ def get_crowdsaledetails():
     
     weiraised = 0
     presale_weiraised = 0
-
+    # this function is invoked everytime there is a state change, which helps in easy transition from Pre-Sale -> Public ICO -> Corwdsale closing
     if(pre_isOpen):
         # If active stage is pre-sale, update stage variable and get presale data by making contract function calls
         stage = "Presale"
@@ -143,9 +147,7 @@ def get_crowdsaledetails():
         token_price = crowdsale_contract.functions.rate().call()
         presale_weiraised = presale_contract.functions.weiRaised().call()
         ico_weiraised = crowdsale_contract.functions.weiRaised().call()
-        weiraised = presale_weiraised + ico_weiraised
-        # status = "Close"
-        # st.title("Shoex Crowdsale is Closed !!")
+        weiraised = presale_weiraised + ico_weiraised       
         tabHeader = "Shoex Crowdsale is Closed !!"          
 
     # Display Data
@@ -154,12 +156,11 @@ def get_crowdsaledetails():
     st.sidebar.write("#### Total ETH Raised ",w3.fromWei(weiraised,'ether'))    
     st.sidebar.write("#### Presale ETH Raised ",w3.fromWei(presale_weiraised,'ether'))    
     if(stage == "Public ICO"):
-        st.sidebar.write("#### Goal ",w3.fromWei(crowdsale_contract.functions.goal().call(),'ether'))
-  
-    # st.sidebar.write("#### Status ",status)
+        st.sidebar.write("#### Goal ",w3.fromWei(crowdsale_contract.functions.goal().call(),'ether'))  
+    
     st.sidebar.write("#### Opening Time ",crowdsale_contract.functions.openingTime().call())
     st.sidebar.write("#### Closing Time ",crowdsale_contract.functions.closingTime().call())
-    # crowdsale_contract.functions.buyTokens()
+    
 
     return stage,tabHeader
 
@@ -167,12 +168,26 @@ def get_crowdsaledetails():
 st.sidebar.image("../Images/shoex sneaky brand logo (1).png")
 # invoke helper function to get real time crowdsale data
 stage,tabHeader = get_crowdsaledetails()
- 
+
+################################################################################
+# Section 5 - Contains functional code for 3 tabs
+#   * tab1 - Crowdsale code 
+#       1. Provides UI and interacts with the contracts 
+#       2. Display realtime crowdsale status and data in the sidebar
+#       3. Provides functionality to buy token in both stages of crowdsale        
+#       4. Smooth transition in the UI when stage moves from pre-sale to crowdsale
+#       5. Implements Presale validations -
+#               1) presale is only open to the whitelisted beneficiaries 
+#               2) for a limited time 
+#               3) at discounted rate
+#       6. Implement functionality to add whitelisted addresses
+#   * tab2 - Register
+#       1. Provides UI for user to enter name and email address.
+#       2. Saves user data in an excelsheet.
+#   * tab2 - Whitepaper - Provides link to Shoex Whitepaper.
+################################################################################
 with tab1:
-    st.header(tabHeader)
-    #----------------------------------------------------------------------------------------------------------------------
-    # Transaction functionality designs
-    #----------------------------------------------------------------------------------------------------------------------
+    st.header(tabHeader)    
     accounts = w3.eth.accounts
     token_price = crowdsale_contract.functions.rate().call()
     if(stage == "Presale"):    
@@ -186,7 +201,7 @@ with tab1:
                 genericAccounts.append(account)                                
         address = st.selectbox("Whitelisted Accounts", options=whlistedAccounts)
         number_of_tokens = st.number_input("Number of Tokens Purchasing", step = 1)    
-        
+        # Following code provides functionality to buy token during pre-sale
         if st.button("Buy Token"):                          
             total_cost = token_price * number_of_tokens  
             st.markdown("## Total Token Cost in Ether ",total_cost)        
@@ -201,15 +216,18 @@ with tab1:
             # Celebrate your successful payment            
             st.balloons()                        
             st.session_state.load_state = True           
+            # reload page to reflect state change
             st.experimental_rerun()
         
-        genaddress = st.sidebar.selectbox("Generic Accounts", options=genericAccounts)    
+        genaddress = st.sidebar.selectbox("Generic Accounts", options=genericAccounts) 
+        # Following code provides functionality to add whitelisted beneficiaries   
         if(st.sidebar.button("Add to Whitelisteds")):
             transaction_hash = presale_contract.functions.addWhitelistedAddress(genaddress).transact({"from": genaddress, "value": 892440000000000,"gas": 2000000})
             receipt = w3.eth.waitForTransactionReceipt(transaction_hash)      
             whlistedAccounts.append(address)
             st.sidebar.write(receipt.transactionHash.hex())
             st.session_state.load_state = True
+            # reload page to reflect state change
             st.experimental_rerun()
 
     elif(stage == "Public ICO"):         
@@ -221,15 +239,13 @@ with tab1:
             
             # Write total cost of tokens
             total_cost = token_price * number_of_tokens    
-            st.markdown("## Total Token Cost in Ether ",total_cost)
-            
+            st.markdown("## Total Token Cost in Ether ",total_cost)            
             receipt = None    
             value = w3.toWei(total_cost, "ether")
-                        
+            # Following code provides functionality to buy token during pre-sale            
             transaction_hash = crowdsale_contract.functions.buyTokens(address).transact(
                 {"from": address, "value": value, "gas": 2000000})
-            receipt = w3.eth.waitForTransactionReceipt(transaction_hash)    
-            
+            receipt = w3.eth.waitForTransactionReceipt(transaction_hash)                
 
             st.markdown("#### Validated Transaction Hash")
             
@@ -237,6 +253,7 @@ with tab1:
             st.session_state.load_state = True            
             # Celebrate your successful payment
             st.balloons()
+            # reload page to reflect state change
             st.experimental_rerun()
     st.session_state.load_state = True
 with tab2:
