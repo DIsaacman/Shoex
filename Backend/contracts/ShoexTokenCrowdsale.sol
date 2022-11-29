@@ -8,11 +8,16 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/distribution/RefundablePostDeliveryCrowdsale.sol";
 
 // Have the ShoexTokenCrowdsale contract inherit the following OpenZeppelin:
-// * Crowdsale
-// * MintedCrowdsale
-// * CappedCrowdsale
-// * TimedCrowdsale
-// * RefundablePostDeliveryCrowdsale
+// * Crowdsale - Crowdsale is a base contract for managing a token crowdsale,
+//               allowing investors to purchase tokens with ether. This contract implements
+//               such functionality in its most fundamental form and can be extended to provide additional
+//               functionality and/or custom behavior.
+// * MintedCrowdsale - Extension of Crowdsale contract whose tokens are minted in each purchase.
+// * CappedCrowdsale - Crowdsale with a limit for total contributions.
+// * TimedCrowdsale - Crowdsale accepting contributions only within a time frame.
+// * RefundablePostDeliveryCrowdsale - Extension of RefundableCrowdsale contract that only delivers the tokens
+//                                     once the crowdsale has closed and the goal met, preventing refunds to be issued
+//                                     to token holders.
 
 contract ShoexTokenCrowdsale is Crowdsale, MintedCrowdsale, CappedCrowdsale, TimedCrowdsale, RefundablePostDeliveryCrowdsale { // UPDATE THE CONTRACT SIGNATURE TO ADD INHERITANCE
     
@@ -20,10 +25,8 @@ contract ShoexTokenCrowdsale is Crowdsale, MintedCrowdsale, CappedCrowdsale, Tim
 
     uint256 investorHardCap = 0;    
 
-    address[] _whitelisteds;
-    
+    address[] _whitelisteds; // list of whitelisted beneficiaries  
      
-
     // Provide parameters for all of the features of your crowdsale, such as the `rate`, `wallet` for fundraising, and `token`.
     constructor(
         uint256 rate, // rate in TKNbits
@@ -63,7 +66,6 @@ contract ShoexTokenCrowdsale is Crowdsale, MintedCrowdsale, CappedCrowdsale, Tim
 
 }
 
-
 contract ShoexTokenCrowdsaleDeployer {
     // Create an `address public` variable called `shoex_token_address`.
     address public shoex_token_address;
@@ -91,7 +93,7 @@ contract ShoexTokenCrowdsaleDeployer {
         // Create a new instance of the `ShoexTokenCrowdsale` contract
         //ShoexTokenCrowdsale shoex_crowdsale = new ShoexTokenCrowdsale(rate, wallet, token, investorcap, goal, now, now + 24 weeks);                           
 
-        ShoexTokenCrowdsale shoex_crowdsale = new ShoexTokenCrowdsale(rate, wallet, token, investorcap, goal, block.timestamp + 15 minutes, block.timestamp + 36 weeks);
+        ShoexTokenCrowdsale shoex_crowdsale = new ShoexTokenCrowdsale(rate, wallet, token, investorcap, goal, block.timestamp + 4 weeks, block.timestamp + 24 weeks);
         // Assign the `ShoexTokenCrowdsale` contract’s address to the `shoex_crowdsale_address` variable.
         shoex_crowdsale_address = address(shoex_crowdsale);
 

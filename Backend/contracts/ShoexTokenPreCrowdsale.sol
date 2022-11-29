@@ -4,14 +4,19 @@ import "./ShoexToken.sol";
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/Crowdsale.sol";
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/validation/TimedCrowdsale.sol";
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/emission/MintedCrowdsale.sol";
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/distribution/FinalizableCrowdsale.sol";
 
-
-contract ShoexTokenPreCrowdsale is Crowdsale, MintedCrowdsale, TimedCrowdsale,FinalizableCrowdsale {
+// Have the ShoexTokenPreCrowdsale contract inherit the following OpenZeppelin:
+// * Crowdsale - Crowdsale is a base contract for managing a token crowdsale,
+//               allowing investors to purchase tokens with ether. This contract implements
+//               such functionality in its most fundamental form and can be extended to provide additional
+//               functionality and/or custom behavior.
+// * MintedCrowdsale - Extension of Crowdsale contract whose tokens are minted in each purchase.
+// * TimedCrowdsale  - Crowdsale accepting contributions only within a time frame.
+contract ShoexTokenPreCrowdsale is Crowdsale, MintedCrowdsale, TimedCrowdsale {
   
-  mapping(address => bool) public whitelisteds;
+  mapping(address => bool) public whitelisteds; // mapping for beneficiary and it's whitelisted status
   string public Stage = "Presale";
-  
+    
   constructor(
     uint256 _rate,
     address payable _wallet,
@@ -43,12 +48,26 @@ contract ShoexTokenPreCrowdsale is Crowdsale, MintedCrowdsale, TimedCrowdsale,Fi
      * @dev public function to add whitelised beneficary
      * @param beneficary Token purchaser     
      */
-    function addWhitelistedAddress (address beneficary) public
+    function addWhitelistedAddress (address beneficary) public payable
     {
       if(!whitelisteds[beneficary])
       {
-        whitelisteds[beneficary] = true;        
+        whitelisteds[beneficary] = true;                
+                  
+      }      
+    }
+
+    /**
+     * @dev public function to check if a beneficary is whitelised 
+     * @param beneficary Token purchaser     
+     */
+    function isWhitelisted(address beneficary) public view returns (bool) {
+      if(whitelisteds[beneficary])
+      {
+        return true;     
+           
       }
+        return false;
     }
 }
 
@@ -77,7 +96,7 @@ contract ShoexTokenPreCrowdsaleDeployer {
 
         // Create a new instance of the `ShoexTokenPreCrowdsale` contract       
 
-        ShoexTokenPreCrowdsale shoex_pre_crowdsale = new ShoexTokenPreCrowdsale(rate, wallet, token, block.timestamp , block.timestamp + 14 minutes);
+        ShoexTokenPreCrowdsale shoex_pre_crowdsale = new ShoexTokenPreCrowdsale(rate, wallet, token, block.timestamp , block.timestamp + 4 weeks);
         // Assign the `ShoexTokenPreCrowdsale` contract’s address to the `shoex_crowdsale_address` variable.
         shoex_pre_crowdsale_address = address(shoex_pre_crowdsale);
 

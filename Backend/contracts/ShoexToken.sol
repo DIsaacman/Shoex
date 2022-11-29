@@ -24,5 +24,6 @@ contract ShoexToken is ERC20, ERC20Detailed, ERC20Mintable {
     public
     {
         // constructor can stay empty
-    }
+    }   
+    
 }
