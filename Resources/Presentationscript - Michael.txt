@@ -1,0 +1,27 @@
+ShoeX will act as a platform with accessibility and liquidity,
+to provide solutions for both investors looking for diversification and sneakerheads hunting for their rare sneakers. 
+How would this relate to Fintech? In this project, most of what we learnt were used to build the app. From Data Analysis and Machine Learning,
+to blockchain for creating Crowdsale and Shoes NFT.
+
+Let's dive into our approach to understand the flow.
+
+First, we have the users. They can access and interact with ShoeX website to purchase SNEAKY COIN in presale, crowdsale. The website (which built by Stremlit),
+provides the users neccessary info related to sales events, collect users name and email address and their requests. These requests will then be
+processed and executed by the smartcontracts we built in the back-end. 
+
+
+Then what do we do with the ML? The ML learning uses data collected from around 13,000 sales, then predict if a particular pair of shoes would be profitable
+to purchase for resale. ML models we used are Logistic Regression, KNN. That's how we build up inventory. Then we come to the physical warehouse.
+It stores the shoes and deliver the orders to customers. With this, we would use simple inventory management system.
+
+
+
+
+
+
+CHALLENGES
+Frontend and Backend integration was much more complicated than we expected. As Streamlit was relatively restrictive, we had to modify the works
+many times for better integration. For example, initially we wanted to use a cloud service called DETA to build users information database.
+But connecting this cloud service to streamlit proves to be a technical challenge. So eventually, we had to use CSV as a method of storage.
+We think it is better to use HTML, CSS or JavaScript to build
+the frontend.
