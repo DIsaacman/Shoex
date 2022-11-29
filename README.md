@@ -83,19 +83,28 @@ To run the solidity code in Remix, please complie the solution files and follow 
 
 Presale is open only for whitelisted investors, where tokens are offered at a better rate. The gif below describes buying tokens during the presale.
 
+
+
 ![](Images/Presale.gif)
 
 
 
 ### Stage 2 - Public ICO
 
+
 The gif below describes buying tokens during a public ICO.
 
+
+
 ![](Images/PublicICOBuyRemix.gif)
+
+
 
 ### Stage 2.1 - ICO Raise Not Funded
     
 The gif below shows finalising post-delivery refundable crowdsale when the goal is not met. In this scenario, investors can withdraw their money.
+
+
 
 ![](Images/PublicICOFinaliseWithReturnRemix.gif)
 
@@ -110,6 +119,9 @@ Interacting with The Front End on Streamlit
 Whitelisted addresses can select their account and select an amount to purchase.
 
 Additional information is available on the sidebar including the "Rate" of ETH/SHX Token and the "Total ETH Raised"
+
+
+
 ![Crowdsale](https://github.com/DIsaacman/Shoex/blob/main/Images/streamlit1.png)
 
 
@@ -119,6 +131,8 @@ Allows a user to stay up to date with the latest information.
 
 The captured information will be stored in the Resources folder in a CSV
 
+
+
 ![Email_Capture](https://github.com/DIsaacman/Shoex/blob/main/Images/streamlit2.jpg)
 
 
@@ -127,6 +141,8 @@ The captured information will be stored in the Resources folder in a CSV
 Link for more information regarding the token economics (tokenomics) and allocation of funds.
 
 User redirected to the active github repo for the whitepaper.
+
+
 
 ![Whitepaper](https://github.com/DIsaacman/Shoex/blob/main/Images/streamlit3.jpg)
 
@@ -142,7 +158,9 @@ The ERC-20 code was written in Solidity, a smart-contract language on Ethereum.
 pragma solidity ^0.5.17;
 ```
 
+
 Tools used were:
+
 
 - [Ganache](https://trufflesuite.com/ganache/)  to access the ETH test-net
 
@@ -177,17 +195,18 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5
 
 ## Interacting with the Backend
 
+
 To run the code on your local machine, please follow the below steps:
 
-1 Download the GitHub repo using ```git clone git@github.com:DIsaacman/Shoex.git```
-2 Open Remix IDE and upload the three ```.sol``` files in the contracts folder
-3 Open Ganache and ensure MetaMask is installed and active
-4 Compile the Contracts in Remix-IDE
-5 Copy The ABI and save/overwrite to backend/contracts/compiled using the same names
-6 Deploy the ShoeX Token Presale and Crowdsale (ShoexTokenPreCrowdsaleDeployer)
-7 Parse in the input parameters, including token name and token rate, with Remix Deployer
-8 Copy the contract addresses of Presale and Crowdsale
-9 Insert the addresses into a .env file using the syntax
+1. Download the GitHub repo using ```git clone git@github.com:DIsaacman/Shoex.git```
+2. Open Remix IDE and upload the three ```.sol``` files in the contracts folder
+3. Open Ganache and ensure MetaMask is installed and active
+4. Compile the Contracts in Remix-IDE
+5. Copy The ABI and save/overwrite to backend/contracts/compiled using the same names
+6. Deploy the ShoeX Token Presale and Crowdsale (ShoexTokenPreCrowdsaleDeployer)
+7. Parse in the input parameters, including token name and token rate, with Remix Deployer
+8. Copy the contract addresses of Presale and Crowdsale
+9. Insert the addresses into a .env file using the syntax
 
 ```env
 MNEMONIC = "(insert 12 word keyphrase)"
@@ -197,7 +216,7 @@ PRE_TOKEN_CONTRACT_ADDRESS= "(insert)"
 SALE_SMART_CONTRACT_ADDRESS= "(insert)"
 SALE_TOKEN_CONTRACT_ADDRESS= "(insert)"
 ```
-10 Launch AdminAp.py streamlit run ```adminApp.py```
+10. Launch AdminAp.py streamlit run ```adminApp.py```
 
 
 
